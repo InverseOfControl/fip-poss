@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-autowire="byName">
+
+	<!-- 账户系统接口 -->
+	
+	<!-- 账户服务：开户，账户查询，余额查询，每日余额查询 -->
+	<dubbo:reference id="accountManageFacade"
+		interface="com.ipaylinks.acct.facade.AccountManageFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+
+	<!-- 记账类相关服务:记账，账户(内部/外部，记账/调账)流水查询 -->
+	<dubbo:reference id="accountingFacade"
+		interface="com.ipaylinks.acct.facade.AccountingFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+
+	<!-- 调账接口 -->
+	<dubbo:reference id="accountAdjustFacade"
+		interface="com.ipaylinks.acct.facade.AccountAdjustFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+
+	<!-- 记账规则接口：查询 -->
+	<dubbo:reference id="accountingRuleFacade"
+		interface="com.ipaylinks.acct.facade.AccountingRuleFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+
+	<!-- 汇总类服务：历史余额汇总，冻结汇总，汇总批次查询 -->
+	<dubbo:reference id="collectBatchFacade"
+		interface="com.ipaylinks.acct.facade.CollectBatchFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+	
+	<!-- 冻结/解冻相关服务:冻结/解冻，冻结/解冻历史查询，每日冻结余额汇总查询 -->
+	<dubbo:reference id="accountFreezeFacade"
+		interface="com.ipaylinks.acct.facade.AccountFreezeFacade"
+		retries='3' timeout="1200000" version="1.0" check="false"/>
+	
+</beans>

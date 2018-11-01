@@ -1,0 +1,5 @@
+com\ipaylinks\poss\facade\model\HelloRequest.class
+com\ipaylinks\poss\facede\biz\HelloService.class
+com\ipaylinks\poss\facade\model\HelloResponse.class
+com\ipaylinks\poss\facade\abs\AbstractRequest.class
+com\ipaylinks\poss\facade\abs\AbstractResponse.class

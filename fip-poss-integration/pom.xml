@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ipaylinks.poss</groupId>
+		<artifactId>fip-poss</artifactId>
+		<version>1.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.ipaylinks.poss.integration</groupId>
+	<artifactId>fip-poss-integration</artifactId>
+	<packaging>jar</packaging>
+	<name>fip-poss-integration</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ipaylinks.poss.dal</groupId>
+			<artifactId>fip-poss-dal</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ipaylinks.poss.util</groupId>
+			<artifactId>fip-poss-util</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ipaylinks.cmp.css.facade</groupId>
+			<artifactId>cmp-css-facade</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ipaylinks.mcs.facade</groupId>
+			<artifactId>ump-mcs-facade</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+            <groupId>com.ipaylinks.verify</groupId>
+            <artifactId>verify-center-facade</artifactId>
+        </dependency>
+ 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ipaylinks.facade</groupId>
+			<artifactId>cmp-accounting-facade</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+ 
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		<!-- dubbo���� -->
+		<dependency>
+			<groupId>com.ipaylinks.acct.facade</groupId>
+			<artifactId>cmp-acct-facade</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ipaylinks.ccs.facade</groupId>
+			<artifactId>ump-ccs-facade</artifactId>
+            <version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>com.ipaylinks</groupId>
+			<artifactId>spring-config-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ipaylinks.fusion</groupId>
+			<artifactId>fusion-oss</artifactId>
+		</dependency>
+
+		<!-- 渠道服务 -->
+		<dependency>
+			<groupId>com.ipay</groupId>
+			<artifactId>commonService_stub</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-parent</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>jcl-over-slf4j</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.pay</groupId>
+			<artifactId>channel-stub</artifactId>
+			<version>1.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.zookeeper</groupId>
+					<artifactId>zookeeper</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.ipay</groupId>
+					<artifactId>service_util</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- 支付核心服务 -->
+		<dependency>
+			<groupId>com.ipaylinks</groupId>
+			<artifactId>cmp-paycore-facade</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

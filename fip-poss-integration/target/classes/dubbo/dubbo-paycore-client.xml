@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-autowire="byName">
+
+	<!-- 支付订单查询服务 -->
+	<dubbo:reference id="payOrderQueryFacade" interface="com.ipaylinks.paycore.facade.rmi.PayOrderQueryFacade"
+					 retries='${dubbo.common.retry?:0}' timeout="${dubbo.common.timeout?:60000}" version="${dubbo.paycore.version?:1.0}" check="false"/>
+
+	<!-- 黑名单管理服务 -->
+	<dubbo:reference id="blackListFacade" interface="com.ipaylinks.paycore.facade.rmi.BlackListFacade"
+					 retries='${dubbo.common.retry?:0}' timeout="${dubbo.common.timeout?:60000}" version="${dubbo.paycore.version?:1.0}" check="false"/>
+
+</beans>

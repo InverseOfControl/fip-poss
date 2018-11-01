@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+       default-autowire="byName">
+
+    <!-- 清算订单查询接口 -->
+    <dubbo:reference id="liquidationOrderFacade" interface="com.ipaylinks.cmp.css.facade.LiquidationOrderFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 渠道流水单查询接口 -->
+    <dubbo:reference id="channelOrderFacade" interface="com.ipaylinks.cmp.css.facade.ChannelOrderFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 查询结算明细 -->
+    <dubbo:reference id="QuerySettlementDetailFacade" interface="com.ipaylinks.cmp.css.facade.QuerySettlementDetailFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 查询结算单 -->
+    <dubbo:reference id="querySettlementOrderFacade" interface="com.ipaylinks.cmp.css.facade.QuerySettlementOrderFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 查询结算汇总单 -->
+    <dubbo:reference id="querySettlementSummaryFacade" interface="com.ipaylinks.cmp.css.facade.QuerySettlementSummaryFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 查询商户手续费 -->
+    <dubbo:reference id="queryMerchantFeeFacade" interface="com.ipaylinks.cmp.css.facade.QueryMerchantFeeFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 商户结算配置信息接口 -->
+    <dubbo:reference id="merchantSettlementConfigFacade"
+                     url="dubbo://127.0.0.1:20004"
+                     interface="com.ipaylinks.mcs.facade.MerchantSettlementConfigFacade"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 商户结算银行账户配置信息接口 -->
+    <dubbo:reference id="merchantSettlementBankConfigFacade"
+                     url="dubbo://127.0.0.1:20004"
+                     interface="com.ipaylinks.mcs.facade.MerchantSettlementBankConfigFacade"
+                     retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}"
+                     version="${dubbo.ccs.version?:1.0}" check="false"/>
+
+    <!-- 渠道查询服务 -->
+    <dubbo:reference id="channelQueryRpc"
+                     interface="com.ipay.commonService.channel.rpc.ChannelQueryRpc" retries='0'
+                     timeout="60000" version="1.0" check="false" />
+
+
+    <!-- 渠道清分异常处理 -->
+    <dubbo:reference id="repairExceptionProcessFacade"
+                     url="dubbo://127.0.0.1:20011"
+                     interface="com.ipaylinks.cmp.css.facade.RepairExceptionProcessFacade" retries='0'
+                     timeout="60000" version="1.0" check="false" />
+
+</beans>

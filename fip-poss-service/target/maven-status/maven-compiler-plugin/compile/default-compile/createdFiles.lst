@@ -1,0 +1,4 @@
+com\ipaylinks\poss\service\crm\ResourceService.class
+com\ipaylinks\poss\service\crm\impl\AttachmentServiceImpl.class
+com\ipaylinks\poss\service\crm\impl\ResourceServiceImpl.class
+com\ipaylinks\poss\service\crm\AttachmentService.class

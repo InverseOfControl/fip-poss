@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+	default-autowire="byName">
+
+	<!-- 计费服务， 商户计费配置 start-->
+	<dubbo:reference id="merchChargeConfigFacade" interface="com.ipaylinks.ccs.facade.biz.MerchChargeConfigFacade"
+					 retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}" version="${dubbo.mcs.version?:1.0}" check="false"/>
+	<!-- 计费服务， 商户计费配置 start-->
+	<dubbo:reference id="channelChargeConfigFacade" interface="com.ipaylinks.ccs.facade.biz.ChannelChargeConfigFacade"
+					 retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}" version="${dubbo.mcs.version?:1.0}" check="false"/>
+
+	<!-- 根据渠道查询二级商户号-->
+	<dubbo:reference id="channelConfigFacadeRpc" interface="com.pay.channel.rpc.channelconfig.ChannelConfigFacadeRpc"
+					 retries='${dubbo.common.retry?:1}' timeout="${dubbo.common.timeout?:6000}" version="${dubbo.mcs.version?:1.0}" check="false"/>
+
+</beans>

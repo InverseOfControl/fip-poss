@@ -1,0 +1,23 @@
+﻿add_p,fip-poss,运营管理后台,运营管理后台,cuber,cuber.huang@ipaylinks.com,13248199190,1.0   
+# 
+add,fip-poss,server.port,8123,服务端口
+#
+add,fip-poss,spring.datasource.name,springHikari,连接池的名称
+#
+add,fip-poss,spring.datasource.type,com.zaxxer.hikari.HikariDataSource,数据库连接类型hikari
+#
+add,fip-poss,spring.datasource.hikari.maximum-pool-size,20,最大连接数
+#
+add,fip-poss,spring.datasource.hikari.connection-timeout,70000,连接数据库超时时间
+#
+add,fip-poss,spring.datasource.read.hikari.dataSource.cachePrepStmts,true,是否缓存prepStmt
+#开发环境，不同环境需要修改IP
+add,fip-poss,spring.datasource.url,jdbc:oracle:thin:@121.40.208.215:2521:ipay,数据库连接URL
+#
+add,fip-poss,spring.datasource.userName,poss,数据库用户名
+#
+add,fip-poss,spring.datasource.password,PLe36GRseopJD0bShNx9,数据库密码
+#
+add,fip-poss,spring.datasource.testWhileIdle,true,当空闲校验使用校验sql
+#
+add,fip-poss,spring.datasource.validationQuery,select 1 from dual,校验连接可用sql
