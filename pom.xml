@@ -17,6 +17,7 @@
 		<version>1.5.7.RELEASE</version>
 	</parent>
 
+
 	<properties>
 		<ipaylinks.self.version>0.0.1-SNAPSHOT</ipaylinks.self.version>
 		<ipaylinks.facade.self.version>0.0.1-SNAPSHOT</ipaylinks.facade.self.version>
